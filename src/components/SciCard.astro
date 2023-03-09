@@ -1,0 +1,122 @@
+---
+export interface Props {
+	
+}
+
+---
+<div class="screen">
+	<div class="screen-image"></div>
+	<div class="screen-overlay"></div>
+</div>
+
+<style>
+	.screen {
+		width: 80vw;
+		height: 25vh;
+		background-color: rgba(31, 126, 204, 0.325);
+		border-radius: 1rem;
+		position: relative;
+		overflow: hidden;
+	}
+
+	
+	@keyframes pan-overlay {
+		from {
+			background-position: 0% 0%;
+		}
+
+		to {
+			background-position: 0% -100%;
+		}
+	}
+
+	.screen > .screen-image {
+		background: url("/apple-products.jpg");
+		/* background: url("https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80"); */
+		height: 100%;
+		width: 100%;
+		background-size: 100%;
+		filter:brightness(70%);
+		opacity: 0.6;
+		animation: pan-image 15s infinite linear;
+	}
+	@media screen and (max-width : 768px ) {
+        .screen > .screen-image {
+			background-size: 200%;
+			animation: pan-image 5s infinite linear;
+		}
+    }
+
+
+	@keyframes pan-image {
+		0% {
+			background-position: 36% 42%;
+			background-size: 100%;
+		}
+		
+		20% {
+			background-position: 30% 35%;
+			background-size: 100%;
+		}
+		
+		20.0001% { /* -- View 2 -- */
+			background-position: 60% 85%;
+			background-size: 150%;
+		}
+		
+		40% {
+			background-position: 49% 81%;
+			background-size: 150%;
+		}
+		
+		40.0001% { /* -- View 3 -- */
+			background-position: 80% 42%;
+			background-size: 120%;
+		}
+		
+		60% {
+			background-position: 84% 33%;
+			background-size: 120%;
+		}
+		
+		60.0001% { /* -- View 4 -- */
+			background-position: 0% 0%;
+			background-size: 150%;
+		}
+		
+		80% {
+			background-position: 15% 4%;
+			background-size: 100%;
+		}
+		
+		80.0001% { /* -- View 5 -- */
+			background-position: 80% 10%;
+			background-size: 100%;
+		}
+		
+		100% {
+			background-position: 72% 14%;
+			background-size: 50%;
+		}
+	}
+
+	
+	.content {
+		position: absolute;
+		z-index: 5;
+		bottom: 6rem;
+		display: grid;
+		place-content: center;
+		border: 1px solid red;
+	}
+	.user {
+	}
+
+	.user > span {
+		font-weight: 600;
+		font-size: 2.5rem;
+		font-family: 'Climate Crisis', cursive;
+		color: white;
+	}
+
+</style>

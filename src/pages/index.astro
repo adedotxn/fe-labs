@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SciCard from '../components/SciCard.astro';
+import Glitch from '../components/Glitch.astro';
+
+---
+
+<Layout title="Lab">
+
+	<header>
+		<h1 class="site-name">FE Lab</h1>
+		<p>I'm basically going to be trying to get better at web animations and this is going to be my lab for learning and experiments. haha</p>
+	</header>
+
+
+	<main>
+		<div class="sci-card">
+			<SciCard />
+		</div>
+
+		<Glitch text="BEGIN"/>
+	</main>
+</Layout>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Inter:wght@200;300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');	
+	header {
+		/* display: flex; */
+		background: aliceblue;
+		color: var(--bg);
+		padding: 0;
+		margin: 0;
+	}
+
+	header > h1 {
+		font-family: 'Syne', sans-serif;
+		font-weight: 800;
+		border: 1px solid var(--bg);
+	}
+
+	header > p {
+		font-family: 'Syne', sans-serif;		
+		font-size: 1rem;
+		border: 1px solid var(--bg);
+		margin: 0;
+		padding: .2rem .3rem;
+	}
+
+
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		/* max-width: 60ch; */
+		display: grid;
+		place-items: center;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+</style>

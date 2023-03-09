@@ -1,0 +1,31 @@
+---
+export interface Props {
+	text: string
+}
+
+const { text } = Astro.props;
+
+---
+
+<script>
+ import {glitch} from '../glitch';
+
+ const textElement   = document.getElementsByClassName('glitch-text')[0] as HTMLElement;
+ glitch(textElement)
+
+</script>
+<h1 data-value={text} id="text-glitch" class="glitch-text">{text}</h1>
+<style>
+	.glitch-text {
+        font-family: 'Climate Crisis', cursive;
+        letter-spacing: .2rem;
+        font-size: 3rem;
+    }
+
+    @media screen and (max-width : 768px ) {
+        .glitch-text {
+            font-size: 2rem;
+        }
+    }
+
+</style>
